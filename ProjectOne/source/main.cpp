@@ -3,6 +3,8 @@
 #ifdef C
 extern "C" {
 	#include <stdio.h>
+	#include <stdlib.h>
+	#include "c/functions.h"
 	}
 #else
 	#include <iostream>
@@ -10,10 +12,7 @@ extern "C" {
 	#include "cpp/functions.hpp"
 #endif
 
-
-
-
 int main()
 {
-	FindRoot(1, 2, -15);
+
 }

@@ -1,6 +1,7 @@
 #include "functions.hpp"
 #include <iostream>
 #include <iomanip>
+#include <vector>
 void FindRoot(double a, double b, double c)
 {
 	//D = b^2 - 4ac
@@ -22,4 +23,41 @@ void FindRoot(double a, double b, double c)
 
 	std::cout << "X1: " << std::setprecision(10) << x1 << std::endl;
 	std::cout << "X2: " << std::setprecision(10) << x2 << std::endl;
+}
+void Create2DMatrix(std::vector<std::vector<int>>& matrix, int rows, int columns, int fill)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		matrix.emplace_back(std::vector<int>());
+		for (int j = 0; j < columns; j++)
+		{
+			matrix.at(i).push_back(fill);
+		}
+	}
+
+}
+void Print2DMatrix(std::vector<std::vector<int>>& matrix)
+{
+	for (unsigned int i = 0; i < matrix.size(); i++)
+	{
+		for (unsigned int j = 0; j < matrix.at(i).size(); j++)
+		{
+			std::cout << matrix.at(i).at(j) << ", ";
+		}
+		std::cout << std::endl;
+	}
+}
+void Fill2DMatrix(std::vector<std::vector<int>>& matrix, int fill)
+{
+	for (unsigned int i = 0; i < matrix.size(); i++)
+	{
+		for (unsigned int j = 0; j < matrix.at(i).size(); j++)
+		{
+			matrix.at(i).at(j) = fill;
+		}
+	}
+}
+void Delete2DMatrix(std::vector<std::vector<int>>& matrix)
+{
+	matrix.clear();
 }

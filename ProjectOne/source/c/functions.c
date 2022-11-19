@@ -42,7 +42,7 @@ int** new_2d_array(int rows, int columns, int fill)
 	int** arr = (int**)malloc(sizeof(int*) * rows);
 	for (int i = 0; i < rows; i++)
 	{
-		arr[i] = (int*)malloc(sizeof(int*) * columns);
+		arr[i] = (int*)malloc(sizeof(int) * columns);
 		for (int j = 0; j < columns; j++)
 		{
 			arr[i][j] = fill;
@@ -78,4 +78,44 @@ void delete_2d_array(int** arr, int rows)
 		free(arr[i]);
 	}
 	free(arr);
+}
+int my_strlen(const char* str)
+{
+	int size = 0;
+	while (str[size] != '\0') {
+		++size;
+	}
+	return size;
+}
+char* my_strcpy(char* destination, const char* source)
+{
+	int source_size = my_strlen(source);
+	for (int i = 0; i < source_size; i++)
+	{
+		destination[i] = source[i];
+	}
+	destination[source_size] = '\0';
+	return destination;
+}
+char* my_strcat(char* destination, const char* source)
+{
+	int source_size = my_strlen(source);
+	int destination_size = my_strlen(destination);
+	for (int i = 0; i < source_size; i++)
+	{
+		destination[destination_size + i] = source[i];
+	}
+	destination[source_size + destination_size] = '\0';
+	return destination;
+}
+int my_strcmp(const char* lhs, const char* rhs)
+{
+	int i = 0;
+	while (lhs[i]) {
+		if (lhs[i] != rhs[i]) {
+			break;
+		}
+		i++;
+	}
+	return (const unsigned char*)lhs[i] - (const unsigned char*)rhs[i];
 }

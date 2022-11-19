@@ -1,4 +1,4 @@
-//#define C
+#define C
 
 #ifdef C
 extern "C" {
@@ -14,5 +14,5 @@ extern "C" {
 
 int main()
 {
-
-}
+	return 0;
+}	

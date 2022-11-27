@@ -119,3 +119,43 @@ int my_strcmp(const char* lhs, const char* rhs)
 	}
 	return (const unsigned char*)lhs[i] - (const unsigned char*)rhs[i];
 }
+
+char** create_char_matrix(int rows, int columns, char empty_symbol)
+{
+	char** arr = (char**)malloc(sizeof(char*) * rows + 1);
+	for (int i = 0; i < rows; i++)
+	{
+		arr[i] = (char*)malloc(sizeof(char) * columns + 1);
+		for (int j = 0; j < columns; j++)
+		{
+			arr[i][j] = empty_symbol;
+		}
+		arr[i][columns] = NULL;
+	}
+	arr[rows] = NULL;
+	return arr;
+}
+int my_2Dstrlen(char** arr)
+{
+	int size = 0;
+	while (arr[size] != NULL) {
+		size++;
+	}
+	return size;
+}
+void print_char_matrix(char** arr, int space)
+{
+	for (int i = 0; i < my_2Dstrlen(arr); i++)
+	{
+		for (int j = 0; j < my_strlen(arr[i]); j++)
+		{
+			if (space) {
+				printf("%c ", arr[i][j]);
+			}
+			else {
+				printf("%c", arr[i][j]);
+			}
+		}
+		printf("\n");
+	}
+}

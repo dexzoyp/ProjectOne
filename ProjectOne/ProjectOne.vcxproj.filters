@@ -24,12 +24,18 @@
     <ClCompile Include="source\cpp\functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\c\xo_game.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\c\functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\cpp\functions.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\c\xo_game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

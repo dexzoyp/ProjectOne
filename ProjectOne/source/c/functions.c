@@ -122,10 +122,10 @@ int my_strcmp(const char* lhs, const char* rhs)
 
 char** create_char_matrix(int rows, int columns, char empty_symbol)
 {
-	char** arr = (char**)malloc(sizeof(char*) * rows + 1);
+	char** arr = (char**)malloc(sizeof(char*) * (rows + 1));
 	for (int i = 0; i < rows; i++)
 	{
-		arr[i] = (char*)malloc(sizeof(char) * columns + 1);
+		arr[i] = (char*)malloc(sizeof(char) * (columns + 1));
 		for (int j = 0; j < columns; j++)
 		{
 			arr[i][j] = empty_symbol;

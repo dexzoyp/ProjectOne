@@ -21,7 +21,7 @@
     <ClCompile Include="source\c\functions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\cpp\functions.cpp">
+    <ClCompile Include="source\cpp\new_functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\c\xo_game.c">
@@ -32,7 +32,7 @@
     <ClInclude Include="source\c\functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\cpp\functions.hpp">
+    <ClInclude Include="source\cpp\new_functions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\c\xo_game.h">

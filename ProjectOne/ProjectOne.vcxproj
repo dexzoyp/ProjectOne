@@ -96,13 +96,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="source\cpp\functions.cpp" />
+    <ClCompile Include="source\cpp\new_functions.cpp" />
     <ClCompile Include="source\c\functions.c" />
     <ClCompile Include="source\c\xo_game.c" />
     <ClCompile Include="source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\cpp\functions.hpp" />
+    <ClInclude Include="source\cpp\new_functions.hpp" />
     <ClInclude Include="source\c\functions.h" />
     <ClInclude Include="source\c\xo_game.h" />
   </ItemGroup>

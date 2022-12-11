@@ -1,6 +1,7 @@
 #include "functions.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #pragma warning ( push )
 #pragma warning ( disable : 6396 )
@@ -156,6 +157,56 @@ void print_char_matrix(char** arr, int space)
 				printf("%c", arr[i][j]);
 			}
 		}
-		printf("\n");
+		//printf("\n");
 	}
+}
+void write_to_file(const char* filename, const char* data)
+{
+	FILE* file;
+	errno_t err = fopen_s(&file, filename, "w");
+
+	if (err != 0) {
+		printf("ERROR: %d", err);
+		return;
+	}
+
+	if (file)
+	{
+		fprintf(file, data);
+		fclose(file);
+	}
+}
+#define MAXROWS 100
+char** read_from_file(const char* filename)
+{
+	char** data = (char**)malloc(sizeof(char*) * MAXROWS);
+	char row[100];
+	memset(data, 0, sizeof(data));
+	memset(row, 0, sizeof(row));
+
+	FILE* file;
+	errno_t err = fopen_s(&file, filename, "r");
+
+	if (err != 0) {
+		printf("ERROR: %d", err);
+		return NULL;
+	}
+	if (file)
+	{
+		int i = 0;
+		while (fgets(row, sizeof(row), file) != NULL)
+		{
+			int row_size = my_strlen(row);
+			data[i] = (char*)malloc(sizeof(char) * (row_size + 1));
+			if (data[i]) {
+				memset(data[i], 0, row_size + 1);
+				my_strcat(data[i], row);
+				my_strcat(data[i], "\0");
+				i++;
+			}
+		}
+		data[i] = NULL;
+		fclose(file);
+	}
+	return data;
 }

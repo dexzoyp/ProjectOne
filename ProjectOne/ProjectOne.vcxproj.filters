@@ -38,5 +38,8 @@
     <ClInclude Include="source\c\xo_game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\cpp\dependency.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

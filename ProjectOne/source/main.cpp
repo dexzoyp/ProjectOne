@@ -12,12 +12,11 @@ extern "C" {
 	#include <iostream>
 	#include <iomanip>
 	#include <algorithm>
-#include "cpp/new_functions.hpp"
-#include "cpp/dependency.hpp"
+	#include "cpp/new_functions.hpp"
+	#include "cpp/dependency.hpp"
 #endif
 
 int main(int argc, char* argv[])
 {
-	AggregationCode();
 	return 0;
 }
